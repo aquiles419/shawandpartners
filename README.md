@@ -56,7 +56,7 @@ Done, now the application is running via docker
 
 `/api/users?since={number}`
 
-Lista todos os usuários e pagina cada requisição.
+Lists all users and pages each request.
 
 Ex: http://localhost:3333/api/users?since=1
 
