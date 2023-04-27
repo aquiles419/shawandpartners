@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import { Request, Response } from "express";
 
 export class UserListController {
@@ -7,10 +7,14 @@ export class UserListController {
       const { since } = req.query;
 
       const baseUrl = "https://api.github.com";
+      const url = `${baseUrl}/users`;
 
-      const url = `${baseUrl}/users?since=${since}`;
-
-      const response = await axios.get(url);
+      const response: AxiosResponse = await axios.get(url, {
+        params: { since },
+        headers: {
+          Authorization: `Token ${process.env.GITHUB_TOKEN}`,
+        },
+      });
 
       const nextPageLink = response.headers.link?.match(/<(.*?)>; rel="next"/);
 

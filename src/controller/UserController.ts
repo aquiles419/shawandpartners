@@ -9,7 +9,11 @@ export class UsersController {
       const baseUrl = "https://api.github.com";
       const url = `${baseUrl}/users/${username}`;
 
-      const response = await axios.get(url);
+      const response = await axios.get(url, {
+        headers: {
+          Authorization: `Token ${process.env.GITHUB_TOKEN}`,
+        },
+      });
 
       return res.json(response.data);
     } catch (error) {

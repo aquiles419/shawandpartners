@@ -10,7 +10,11 @@ export class UserRepositoriesController {
 
       const url = `${baseUrl}/users/${username}/repos`;
 
-      const response = await axios.get(url);
+      const response = await axios.get(url, {
+        headers: {
+          Authorization: `Token ${process.env.GITHUB_TOKEN}`,
+        },
+      });
 
       return res.json(response.data);
     } catch (error) {
