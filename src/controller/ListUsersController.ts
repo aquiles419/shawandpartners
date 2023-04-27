@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Request, Response } from "express";
 
-export default class UserListController {
+export class UserListController {
   async listUsers(req: Request, res: Response): Promise<Response> {
     try {
       const { since } = req.query;
@@ -26,4 +26,3 @@ export default class UserListController {
     }
   }
 }
-module.exports = new UserListController();

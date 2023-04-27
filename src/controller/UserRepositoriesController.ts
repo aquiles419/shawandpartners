@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Request, Response } from "express";
 
-export default class UserReposController {
+export class UserRepositoriesController {
   async findUserRepository(req: Request, res: Response): Promise<Response> {
     try {
       const { username } = req.params;
@@ -19,4 +19,3 @@ export default class UserReposController {
     }
   }
 }
-module.exports = new UserReposController();

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Request, Response } from "express";
 
-export default class UsersController {
+export class UsersController {
   async showUser(req: Request, res: Response): Promise<Response> {
     try {
       const { username } = req.params;
@@ -14,9 +14,7 @@ export default class UsersController {
       return res.json(response.data);
     } catch (error) {
       console.error(error);
-      return res.status(500).json({ error: "Internal Server Error" });
+      return res.status(500).json(i18n.__("InternalServerError"));
     }
   }
 }
-
-module.exports = new UsersController();

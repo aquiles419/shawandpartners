@@ -1,15 +1,19 @@
 import { Router } from "express";
-import UsersController from "../controller/UserController";
-import UserListController from "../controller/ListUsersController";
-import UserReposController from "../controller/UserRepositoriesController";
+import { UsersController } from "../controller/UserController";
+import { UserListController } from "../controller/ListUsersController";
+import { UserRepositoriesController } from "../controller/UserRepositoriesController";
 
 const routes = Router();
 
-routes.get("/api/users/:username/details", UsersController.showUser);
-routes.get("/api/users", UserListController.listUsers);
+const usersController = new UsersController();
+const userListController = new UserListController();
+const userRepositoriesController = new UserRepositoriesController();
+
+routes.get("/api/users/:username/details", usersController.showUser);
+routes.get("/api/users", userListController.listUsers);
 routes.get(
   "/api/users/:username/repos",
-  UserReposController.findUserRepository
+  userRepositoriesController.findUserRepository
 );
 
 export default routes;
