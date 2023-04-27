@@ -15,5 +15,8 @@ routes.get(
   "/api/users/:username/repos",
   userRepositoriesController.findUserRepository
 );
+routes.get("/healthcheck", (_request, response) =>
+  response.send(i18n.__("HealthChecked"))
+);
 
 export default routes;

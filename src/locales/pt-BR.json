@@ -1,3 +1,4 @@
 {
-  "InternalServerError": "Erro Interno do Servidor"
+  "InternalServerError": "Erro Interno do Servidor",
+  "HealthChecked": "Integridade verificada"
 }

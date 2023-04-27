@@ -1,3 +1,4 @@
 {
-  "InternalServerError": "Internal Server Error"
+  "InternalServerError": "Internal Server Error",
+  "HealthChecked": "Health Checked"
 }
