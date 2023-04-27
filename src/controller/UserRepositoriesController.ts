@@ -11,7 +11,6 @@ export default class UserReposController {
       const url = `${baseUrl}/users/${username}/repos`;
 
       const response = await axios.get(url);
-      console.log(response.data);
 
       return res.json(response.data);
     } catch (error) {

@@ -1,7 +1,7 @@
 import { Router } from "express";
-import UsersController from "../controller/UsersController";
-import UserListController from "../controller/UserListController";
-import UserReposController from "../controller/UserReposController";
+import UsersController from "../controller/UserController";
+import UserListController from "../controller/ListUsersController";
+import UserReposController from "../controller/UserRepositoriesController";
 
 const routes = Router();
 
