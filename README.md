@@ -52,7 +52,7 @@ docker run -p 3333:3333 -d shawandpartners/dockernode
 
 Done, now the application is running via docker
 
-# Endpoints
+# Endpoints
 
 `/api/users?since={number}`
 
@@ -79,5 +79,11 @@ Run the command below to run the tests:
 ```shell
 yarn test
 ```
+
+# Environment
+
+`PORT` - Port where the project will start.
+
+`GITHUB_TOKEN` - Your GitHub authorization token.
 
 # Now it's just coding 🚀
